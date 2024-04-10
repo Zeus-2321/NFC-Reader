@@ -1,12 +1,12 @@
-import React, {usestate} from 'react';
+import React, {useState} from 'react';
 
 const Scanner = () => {
 
-    const [nfcData, setNfcData] = usestate(null);
+    const [nfcData, setNfcData] = useState(null);
 
     const handleScan = async () => {
         try {
-            const reader = new NDEFReader();
+            const reader = new window.NDEFReader();
 
             await reader.scan();
 
