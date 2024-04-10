@@ -5,7 +5,7 @@ function App() {
   return (
     <>
     <h1>Noob</h1>
-    <Scanner></Scanner>
+    {/* <Scanner></Scanner> */}
     </>
   );
 }
