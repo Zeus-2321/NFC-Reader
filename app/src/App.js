@@ -1,5 +1,5 @@
 import './App.css';
-import Scanner from './Components/Scanner';
+// import Scanner from './Components/Scanner';
 
 function App() {
   return (
