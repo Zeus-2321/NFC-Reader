@@ -1,0 +1,41 @@
+.scanner-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .scanner-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .scanner-container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .scanner-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .scanner-container .error {
+    color: #dc3545;
+    margin-bottom: 10px;
+  }
+  
+  .scanner-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .scanner-container li {
+    margin-bottom: 10px;
+  }
+  

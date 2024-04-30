@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import './Scanner.css';
 
 const Scanner = () => {
   const [nfcData, setNfcData] = useState(null);
   const [supportsNFC, setSupportsNFC] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const checkNFCSupport = async () => {
       if ('NDEFReader' in window) {
         setSupportsNFC(true);
       } else {
-        console.log('NFC is not supported on this device.');
+        setError('NFC is not supported on this device.');
       }
     };
 
@@ -36,6 +38,7 @@ const Scanner = () => {
         setNfcData(records);
       });
     } catch (error) {
+      setError('Error scanning NFC. Please try again.');
       console.error('Error scanning NFC:', error);
     }
   };
@@ -48,11 +51,12 @@ const Scanner = () => {
   };
 
   return (
-    <>
+    <div className="scanner-container">
       <h2>NFC Scanner</h2>
       {supportsNFC ? (
         <>
           <button onClick={handleScan}>Scan</button>
+          {error && <p className="error">{error}</p>}
           {nfcData && (
             <div>
               <h3>Scanned NFC Data:</h3>
@@ -71,7 +75,7 @@ const Scanner = () => {
       ) : (
         <p>NFC is not supported on this device.</p>
       )}
-    </>
+    </div>
   );
 };
 
